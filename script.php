@@ -19,8 +19,6 @@ $all_goods = parse_GoodTree($all_goods_json);
 $menu = get_menu();
 
 
-
-
 if (empty($menu) or empty($sh5_report_parsed)) {
     logger('Получено пустое меню либо отчет по себестоимости из SH5');
     exit;
@@ -33,7 +31,6 @@ foreach ($sh5_report_parsed as $depart => $goods) {
     }
     $sh5_report_parsed[$depart] = array_column($sh5_report_parsed[$depart], 'cost', 'guid_rk');
 }
-
 
 
 logger('Формируем XML для записи цен в RK7');
@@ -52,7 +49,6 @@ foreach ($menu as $dish) {
     $item->addAttribute('PRICETYPES-' . RK7_COST_PRICE_TYPE_ID, ($sh5_report_parsed[DEPART_CATEGORY_COMPARISION[$dish['categ']]][$dish['guid']]) * 100);
 }
 Header('Content-type: text/xml');
-
 
 $resultXML = postCURL_RK7($XML->asXML());
 logger('Ответ:');

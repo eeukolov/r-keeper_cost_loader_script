@@ -114,7 +114,7 @@ function postCURL_SH5($payload)
     } else {
         curl_close($ch);
         logger('Ответ от SH5 пришел без ошибок');
-      //  logger($result);
+        //  logger($result);
         return $result;
     }
 
@@ -132,7 +132,7 @@ function parse_report_RptPreCost($json)
         $array[$data['52']][] = array(
             'rid' => $data['210\\1'],
             'name' => $data['210\\3'],
-            'cost' => SH5_COST_WITH_TAX === 1 ? round($data['43'],2) : round($data['40'], 2)
+            'cost' => SH5_COST_WITH_TAX === 1 ? round($data['43'], 2) : round($data['40'], 2)
 
         );
     }
