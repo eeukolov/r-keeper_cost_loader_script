@@ -4,6 +4,11 @@ require_once 'sh5.php';
 require_once 'rk7.php';
 require_once 'logger.php';
 
+if (!file_exists('log')) {
+    mkdir('log', 0777, true);
+}
+
+
 logger('Запуск скрипта');
 $sh5_report_json = get_report_RptPreCost();
 $sh5_report_parsed = parse_report_RptPreCost($sh5_report_json);

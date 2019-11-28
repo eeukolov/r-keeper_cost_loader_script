@@ -2,7 +2,7 @@
 
 const SH5_API_URL = 'http://127.0.0.1:9798/api/sh5exec';
 const SH5_API_USER = 'Admin';
-const SH5_API_PASSWORD = '3651340';
+const SH5_API_PASSWORD = '1111';
 
 const SH5_GROUP_GUID = '{9C4C2BA9-2E05-4E48-BEF4-7A59D0DD2C4D}'; // GUID товарной группы Меню ресторана
 const SH5_REPORT_GROUP_RID = 2; // rid (код) товарной группы Меню ресторана
